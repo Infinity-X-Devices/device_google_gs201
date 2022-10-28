@@ -325,4 +325,8 @@
 
     <!-- Whether Google Camera needs seinfo to access accelerators -->
     <bool name="config_GoogleCamera_needs_seinfo_for_access_to_accelerators">true</bool>
+
+    <!-- The name of the package that will hold the dialer role by default. -->
+    <string name="config_defaultDialer" translatable="false">com.google.android.dialer</string>
+
 </resources>

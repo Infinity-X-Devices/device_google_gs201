@@ -380,9 +380,6 @@ BOARD_BUILD_VENDOR_RAMDISK_IMAGE := true
 KERNEL_MODULE_DIR := $(TARGET_KERNEL_DIR)
 KERNEL_MODULES := $(wildcard $(KERNEL_MODULE_DIR)/*.ko)
 
-ifneq ($(wildcard $(KERNEL_MODULE_DIR)/system_dlkm.modules.blocklist),)
-BOARD_SYSTEM_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_MODULE_DIR)/system_dlkm.modules.blocklist
-endif
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_MODULE_DIR)/vendor_dlkm.modules.blocklist
 
 # Prebuilt kernel modules that are *not* listed in vendor_kernel_boot.modules.load
@@ -406,9 +403,6 @@ $(error vendor_dlkm.modules.load not found or empty)
 endif
 BOARD_VENDOR_KERNEL_MODULES := $(KERNEL_MODULES)
 
-BOARD_SYSTEM_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_MODULE_DIR)/system_dlkm.modules.load))
-BOARD_SYSTEM_KERNEL_MODULES := $(addprefix $(KERNEL_MODULE_DIR)/, $(notdir $(BOARD_SYSTEM_KERNEL_MODULES_LOAD)))
-
 # Using BUILD_COPY_HEADERS
 BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
@@ -426,4 +420,4 @@ BOARD_PVMFWIMAGE_PARTITION_SIZE := 0x00100000
 # pick up library for cleaning digital car keys on factory reset
 -include vendor/google_devices/gs-common/proprietary/BoardConfigVendor.mk
 
-include device/google/gs201/BoardConfigLineage.mk
+include device/google/gs201/BoardConfigInfinity.mk

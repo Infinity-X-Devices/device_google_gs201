@@ -51,3 +51,6 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Trigger fsck on upgrade (305658663)
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.preventative_fsck = 1
+
+# Prop
+TARGET_SYSTEM_PROP := device/google/gs201/system.prop

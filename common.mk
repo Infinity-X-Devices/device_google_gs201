@@ -430,6 +430,7 @@ PRODUCT_PACKAGES += \
 
 # Properties
 TARGET_PRODUCT_PROP += device/google/gs201/product.prop
+TARGET_SYSTEM_PROP += device/google/gs201/system.prop
 ifneq ($(TARGET_IS_TABLET),true)
 TARGET_PRODUCT_PROP += device/google/gs201/product-phone.prop
 endif
